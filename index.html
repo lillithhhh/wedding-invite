@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приглашение</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant&family=Comfortaa:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&family=Comfortaa:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --olive: #98ae84; /* Оливковый */
-            --cream: #fdfaf7; /* Кремово-белый */
+            --olive: #98ae84;
+            --cream: #fdfaf7;
             --dark-text: #4a4a4a;
         }
 
@@ -17,48 +17,56 @@
             margin: 0;
             padding: 0;
             background-color: var(--cream);
-            font-family: 'Comfortaa', serif;
+            font-family: 'Comfortaa', sans-serif; /* Comfortaa лучше без serif */
             color: var(--dark-text);
             text-align: center;
         }
 
         section { padding: 50px 20px; }
 
-        h1 { font-family: 'Cormorant Infant', cursive; font-size: 3.5em; margin: 10px 0; color: var(--olive); }
-        h2 { font-family: 'Cormorant Infant', cursive; font-size: 2.5em; color: var(--olive); }
-        h3 { text-transform: uppercase; letter-spacing: 2px; font-size: 1.2em; margin-bottom: 30px; }
+        h1 { font-family: 'Cormorant Infant', serif; font-size: 3.5em; margin: 10px 0; color: var(--olive); font-weight: 600; }
+        h2 { font-family: 'Cormorant Infant', serif; font-size: 2.5em; color: var(--olive); }
+        h3 { font-family: 'Cormorant Infant', serif; text-transform: uppercase; letter-spacing: 2px; font-size: 1.5em; margin-bottom: 30px; color: var(--olive); font-weight: 600; }
 
         .main-photo {
             width: 100%;
             max-width: 400px;
             height: 500px;
             object-fit: cover;
-            border-radius: 200px 200px 0 0; /* Форма арки */
+            border-radius: 200px 200px 0 0;
             border: 1px solid var(--olive);
             padding: 5px;
             background: white;
+            display: block;
+            margin: 20px auto;
         }
 
-        .date-block { font-size: 1.5em; margin: 20px 0; border-top: 1px solid var(--olive); border-bottom: 1px solid var(--olive); display: inline-block; padding: 10px 40px; }
+        .date-block { 
+            font-family: 'Cormorant Infant', serif;
+            font-size: 1.8em; 
+            margin: 20px 0; 
+            border-top: 1px solid var(--olive); 
+            border-bottom: 1px solid var(--olive); 
+            display: inline-block; 
+            padding: 10px 40px; 
+        }
 
-        /* Расписание */
         .timeline { max-width: 400px; margin: 0 auto; text-align: left; }
         .timeline-item { display: flex; margin-bottom: 20px; align-items: center; }
         .time { font-weight: bold; color: var(--olive); width: 80px; flex-shrink: 0; }
         .event { border-left: 1px solid var(--olive); padding-left: 20px; }
 
-        /* Дресс-код */
         .colors { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
         .color-circle { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #ddd; }
 
-        /* Форма */
         .rsvp-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 20px; }
-        input { width: 90%; padding: 12px; margin: 20px 0; border: none; border-bottom: 1px solid var(--olive); font-family: inherit; font-size: 1em; outline: none; }
+        input { width: 90%; padding: 12px; margin: 20px 0; border: none; border-bottom: 1px solid var(--olive); font-family: inherit; font-size: 1em; outline: none; background: transparent; }
         
         .btn { 
             background: var(--olive); color: white; border: none; 
             padding: 15px 40px; border-radius: 30px; font-size: 1em; 
-            cursor: pointer; margin: 10px; transition: 0.3s; width: 100%; max-width: 300px;
+            cursor: pointer; margin: 10px 0; transition: 0.3s; width: 100%; max-width: 300px;
+            font-family: 'Comfortaa', sans-serif;
         }
         .btn-no { background: transparent; color: var(--olive); border: 1px solid var(--olive); }
     </style>
@@ -66,8 +74,9 @@
 <body>
 
     <section>
-        <p style="text-transform: uppercase; letter-spacing: 3px;">Приглашение</p>
-        <h1>Ажинияз и Интизор</h1> <img src="https://github.com/lillithhhh/wedding-invite/blob/dd2146f5288cda97a9076c9ff2ff738a7e49267b/wed%20photo.png/400x500" alt="Wedding" class="main-photo">
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.9em;">Приглашение</p>
+        <h1>Ажинияз и Интизор</h1> 
+        <img src="https://raw.githubusercontent.com/lillithhhh/wedding-invite/main/wed%20photo.png" alt="Wedding" class="main-photo">
         <div class="date-block">11.05.2026</div>
     </section>
 
@@ -92,12 +101,16 @@
         <h3>Дресс-код</h3>
         <p>Мы будем признательны, если при выборе нарядов вы поддержите цветовую гамму нашей свадьбы:</p>
         <div class="colors">
-            <div class="color-circle" style="background-color: #808b76;"></div> <div class="color-circle" style="background-color: #b7b7a4;"></div> <div class="color-circle" style="background-color: #f0e6d2;"></div> <div class="color-circle" style="background-color: #d4a373;"></div> </div>
+            <div class="color-circle" style="background-color: #808b76;"></div> 
+            <div class="color-circle" style="background-color: #b7b7a4;"></div> 
+            <div class="color-circle" style="background-color: #f0e6d2;"></div> 
+            <div class="color-circle" style="background-color: #d4a373;"></div> 
+        </div>
     </section>
 
     <section>
         <h3>Подтвердите участие</h3>
-        <p>Пожалуйста, подтвердите ваше присутствие до 1 мая 2026 года, чтобы мы могли всё подготовить.</p>
+        <p>Пожалуйста, подтвердите ваше присутствие до 1 мая 2026 года.</p>
         <div class="rsvp-card">
             <input type="text" id="guest_name" placeholder="Ваше имя и фамилия">
             <br>
@@ -109,7 +122,7 @@
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
-        tg.headerColor = "#fdfaf7"; // Цвет шапки в тон сайта
+        tg.headerColor = "#fdfaf7";
 
         function sendData(status) {
             let name = document.getElementById('guest_name').value;
