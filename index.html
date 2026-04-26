@@ -17,56 +17,64 @@
             margin: 0;
             padding: 0;
             background-color: var(--cream);
-            font-family: 'Comfortaa', sans-serif; /* Comfortaa лучше без serif */
+            font-family: 'Comfortaa', sans-serif;
             color: var(--dark-text);
             text-align: center;
         }
 
-        section { padding: 50px 20px; }
+        section { padding: 40px 20px; }
 
-        h1 { font-family: 'Cormorant Infant', serif; font-size: 3.5em; margin: 10px 0; color: var(--olive); font-weight: 600; }
-        h2 { font-family: 'Cormorant Infant', serif; font-size: 2.5em; color: var(--olive); }
-        h3 { font-family: 'Cormorant Infant', serif; text-transform: uppercase; letter-spacing: 2px; font-size: 1.5em; margin-bottom: 30px; color: var(--olive); font-weight: 600; }
-
-        .main-photo {
-            width: 100%;
-            max-width: 400px;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 200px 200px 0 0;
+        /* Элегантная монограмма вместо фото */
+        .monogram {
+            width: 120px;
+            height: 120px;
             border: 1px solid var(--olive);
-            padding: 5px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Infant', serif;
+            font-size: 3em;
+            color: var(--olive);
             background: white;
-            display: block;
-            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(152, 174, 132, 0.1);
         }
+
+        h1 { font-family: 'Cormorant Infant', serif; font-size: 3.2em; margin: 10px 0; color: var(--olive); font-weight: 600; line-height: 1.1; }
+        h2 { font-family: 'Cormorant Infant', serif; font-size: 2.2em; color: var(--olive); }
+        h3 { font-family: 'Cormorant Infant', serif; text-transform: uppercase; letter-spacing: 2px; font-size: 1.4em; margin-bottom: 30px; color: var(--olive); font-weight: 600; }
 
         .date-block { 
             font-family: 'Cormorant Infant', serif;
-            font-size: 1.8em; 
-            margin: 20px 0; 
+            font-size: 1.6em; 
+            margin: 25px 0; 
             border-top: 1px solid var(--olive); 
             border-bottom: 1px solid var(--olive); 
             display: inline-block; 
-            padding: 10px 40px; 
+            padding: 8px 40px; 
+            letter-spacing: 3px;
         }
 
-        .timeline { max-width: 400px; margin: 0 auto; text-align: left; }
-        .timeline-item { display: flex; margin-bottom: 20px; align-items: center; }
-        .time { font-weight: bold; color: var(--olive); width: 80px; flex-shrink: 0; }
-        .event { border-left: 1px solid var(--olive); padding-left: 20px; }
+        /* Тайминг */
+        .timeline { max-width: 350px; margin: 0 auto; text-align: left; }
+        .timeline-item { display: flex; margin-bottom: 25px; align-items: flex-start; }
+        .time { font-weight: bold; color: var(--olive); width: 70px; flex-shrink: 0; padding-top: 2px; }
+        .event { border-left: 1px solid var(--olive); padding-left: 20px; font-size: 0.95em; line-height: 1.4; }
 
-        .colors { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
-        .color-circle { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #ddd; }
+        /* Дресс-код */
+        .colors { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
+        .color-circle { width: 42px; height: 42px; border-radius: 50%; border: 1px solid #eee; }
 
-        .rsvp-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 20px; }
-        input { width: 90%; padding: 12px; margin: 20px 0; border: none; border-bottom: 1px solid var(--olive); font-family: inherit; font-size: 1em; outline: none; background: transparent; }
+        /* Форма */
+        .rsvp-card { background: white; padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-top: 20px; border: 1px solid #f0efeb; }
+        input { width: 100%; box-sizing: border-box; padding: 12px; margin-bottom: 20px; border: none; border-bottom: 1px solid var(--olive); font-family: inherit; font-size: 1em; outline: none; background: transparent; }
         
         .btn { 
             background: var(--olive); color: white; border: none; 
-            padding: 15px 40px; border-radius: 30px; font-size: 1em; 
-            cursor: pointer; margin: 10px 0; transition: 0.3s; width: 100%; max-width: 300px;
-            font-family: 'Comfortaa', sans-serif;
+            padding: 16px; border-radius: 35px; font-size: 1em; 
+            cursor: pointer; margin-bottom: 12px; width: 100%; transition: 0.3s;
+            font-family: 'Comfortaa', sans-serif; font-weight: 500;
         }
         .btn-no { background: transparent; color: var(--olive); border: 1px solid var(--olive); }
     </style>
@@ -74,15 +82,21 @@
 <body>
 
     <section>
-        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.9em;">Приглашение</p>
-        <h1>Ажинияз и Интизор</h1> 
-        <img src="https://raw.githubusercontent.com/lillithhhh/wedding-invite/main/wed%20photo.png" alt="Wedding" class="main-photo">
+        <p style="text-transform: uppercase; letter-spacing: 5px; font-size: 0.8em; color: var(--olive); margin-bottom: 20px;">Приглашение</p>
+        
+        <div class="monogram">А&И</div>
+        
+        <h1>Ажинияз<br>и Интизор</h1>
+        
         <div class="date-block">11.05.2026</div>
     </section>
 
     <section style="background-color: #f7f3ed;">
         <h2>Дорогие близкие!</h2>
-        <p>Один день в этом году будет для нас особенным, и мы хотим провести его вместе с вами. Мы будем очень рады, если вы станете частью нашего праздника!</p>
+        <p style="max-width: 300px; margin: 0 auto; line-height: 1.6;">
+            Один день в этом году будет для нас особенным, и мы хотим провести его вместе с вами. 
+            Будем рады, если вы станете частью нашего праздника!
+        </p>
     </section>
 
     <section>
@@ -93,13 +107,13 @@
             <div class="timeline-item"><div class="time">20:00</div><div class="event">Пожелания гостей</div></div>
             <div class="timeline-item"><div class="time">21:00</div><div class="event">Танец молодых</div></div>
             <div class="timeline-item"><div class="time">22:00</div><div class="event">Дискотека</div></div>
-            <div class="timeline-item"><div class="time">23:00</div><div class="event">Завершение</div></div>
+            <div class="timeline-item"><div class="time">23:00</div><div class="event">Завершение вечера</div></div>
         </div>
     </section>
 
     <section style="background-color: #f7f3ed;">
         <h3>Дресс-код</h3>
-        <p>Мы будем признательны, если при выборе нарядов вы поддержите цветовую гамму нашей свадьбы:</p>
+        <p>Будем признательны, если при выборе нарядов вы поддержите палитру нашей свадьбы:</p>
         <div class="colors">
             <div class="color-circle" style="background-color: #808b76;"></div> 
             <div class="color-circle" style="background-color: #b7b7a4;"></div> 
@@ -109,11 +123,10 @@
     </section>
 
     <section>
-        <h3>Подтвердите участие</h3>
-        <p>Пожалуйста, подтвердите ваше присутствие до 1 мая 2026 года.</p>
+        <h3>Подтверждение</h3>
+        <p>Пожалуйста, подтвердите ваше присутствие.</p>
         <div class="rsvp-card">
             <input type="text" id="guest_name" placeholder="Ваше имя и фамилия">
-            <br>
             <button class="btn" onclick="sendData('Приду')">Я приду!</button>
             <button class="btn btn-no" onclick="sendData('Не смогу')">К сожалению, не смогу</button>
         </div>
@@ -130,13 +143,7 @@
                 alert("Пожалуйста, введите ваше имя");
                 return;
             }
-            
-            let data = {
-                guest_name: name,
-                answer: status
-            };
-            
-            tg.sendData(JSON.stringify(data));
+            tg.sendData(JSON.stringify({guest_name: name, answer: status}));
         }
     </script>
 </body>
