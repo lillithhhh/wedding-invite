@@ -2,48 +2,127 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приглашение на свадьбу</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Немного красоты, чтобы сайт выглядел аккуратно */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 40px; background-color: #f9f9f9; }
-        h1 { color: #d4a373; }
-        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        input { width: 80%; padding: 12px; margin: 15px 0; border: 1px solid #ddd; border-radius: 8px; }
-        .btn { background-color: #d4a373; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 16px; cursor: pointer; }
-        .btn-no { background-color: #e9edc9; color: #606c38; }
+        :root {
+            --olive: #808b76; /* Оливковый */
+            --cream: #fdfaf7; /* Кремово-белый */
+            --dark-text: #4a4a4a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            font-family: 'Lora', serif;
+            color: var(--dark-text);
+            text-align: center;
+        }
+
+        section { padding: 50px 20px; }
+
+        h1 { font-family: 'Marck Script', cursive; font-size: 3.5em; margin: 10px 0; color: var(--olive); }
+        h2 { font-family: 'Marck Script', cursive; font-size: 2.5em; color: var(--olive); }
+        h3 { text-transform: uppercase; letter-spacing: 2px; font-size: 1.2em; margin-bottom: 30px; }
+
+        .main-photo {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 200px 200px 0 0; /* Форма арки */
+            border: 1px solid var(--olive);
+            padding: 5px;
+            background: white;
+        }
+
+        .date-block { font-size: 1.5em; margin: 20px 0; border-top: 1px solid var(--olive); border-bottom: 1px solid var(--olive); display: inline-block; padding: 10px 40px; }
+
+        /* Расписание */
+        .timeline { max-width: 400px; margin: 0 auto; text-align: left; }
+        .timeline-item { display: flex; margin-bottom: 20px; align-items: center; }
+        .time { font-weight: bold; color: var(--olive); width: 80px; flex-shrink: 0; }
+        .event { border-left: 1px solid var(--olive); padding-left: 20px; }
+
+        /* Дресс-код */
+        .colors { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .color-circle { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #ddd; }
+
+        /* Форма */
+        .rsvp-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 20px; }
+        input { width: 90%; padding: 12px; margin: 20px 0; border: none; border-bottom: 1px solid var(--olive); font-family: inherit; font-size: 1em; outline: none; }
+        
+        .btn { 
+            background: var(--olive); color: white; border: none; 
+            padding: 15px 40px; border-radius: 30px; font-size: 1em; 
+            cursor: pointer; margin: 10px; transition: 0.3s; width: 100%; max-width: 300px;
+        }
+        .btn-no { background: transparent; color: var(--olive); border: 1px solid var(--olive); }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Приглашение</h1>
-        <p>Мы будем рады видеть вас на нашем празднике!</p>
-        
-        <input type="text" id="name" placeholder="Введите ваше имя и фамилию">
-        
-        <br>
-        <button class="btn" onclick="sendData('Приду')">Я приду!</button>
-        <button class="btn btn-no" onclick="sendData('Не смогу')">Не смогу</button>
-    </div>
+
+    <section>
+        <p style="text-transform: uppercase; letter-spacing: 3px;">Приглашение на свадьбу</p>
+        <h1>Имена Молодых</h1> <img src="https://via.placeholder.com/400x500" alt="Wedding" class="main-photo">
+        <div class="date-block">11.05.2026</div>
+    </section>
+
+    <section style="background-color: #f7f3ed;">
+        <h2>Дорогие близкие!</h2>
+        <p>Один день в этом году будет для нас особенным, и мы хотим провести его вместе с вами. Мы будем очень рады, если вы станете частью нашего праздника!</p>
+    </section>
+
+    <section>
+        <h3>Программа дня</h3>
+        <div class="timeline">
+            <div class="timeline-item"><div class="time">18:00</div><div class="event">Сбор гостей</div></div>
+            <div class="timeline-item"><div class="time">19:00</div><div class="event">Начало банкета</div></div>
+            <div class="timeline-item"><div class="time">20:00</div><div class="event">Пожелания гостей</div></div>
+            <div class="timeline-item"><div class="time">21:00</div><div class="event">Танец молодых</div></div>
+            <div class="timeline-item"><div class="time">22:00</div><div class="event">Дискотека</div></div>
+            <div class="timeline-item"><div class="time">23:00</div><div class="event">Завершение</div></div>
+        </div>
+    </section>
+
+    <section style="background-color: #f7f3ed;">
+        <h3>Дресс-код</h3>
+        <p>Мы будем признательны, если при выборе нарядов вы поддержите цветовую гамму нашей свадьбы:</p>
+        <div class="colors">
+            <div class="color-circle" style="background-color: #808b76;"></div> <div class="color-circle" style="background-color: #b7b7a4;"></div> <div class="color-circle" style="background-color: #f0e6d2;"></div> <div class="color-circle" style="background-color: #d4a373;"></div> </div>
+    </section>
+
+    <section>
+        <h3>Подтвердите участие</h3>
+        <p>Пожалуйста, подтвердите ваше присутствие до 1 мая 2026 года, чтобы мы могли всё подготовить.</p>
+        <div class="rsvp-card">
+            <input type="text" id="guest_name" placeholder="Ваше имя и фамилия">
+            <br>
+            <button class="btn" onclick="sendData('Приду')">Я приду!</button>
+            <button class="btn btn-no" onclick="sendData('Не смогу')">К сожалению, не смогу</button>
+        </div>
+    </section>
 
     <script>
-        let tg = window.Telegram.WebApp; // Получаем объект Mini App
-        tg.expand(); // Разворачиваем окно
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+        tg.headerColor = "#fdfaf7"; // Цвет шапки в тон сайта
 
         function sendData(status) {
-            let name = document.getElementById('name').value;
-            if (name === "") {
-                alert("Пожалуйста, напишите ваше имя");
+            let name = document.getElementById('guest_name').value;
+            if (!name) {
+                alert("Пожалуйста, введите ваше имя");
                 return;
             }
-
-            // Формируем данные для отправки боту
+            
             let data = {
                 guest_name: name,
                 answer: status
             };
-
-            // Отправляем данные боту (это закроет Mini App)
+            
             tg.sendData(JSON.stringify(data));
         }
     </script>
