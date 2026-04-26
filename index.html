@@ -10,7 +10,7 @@
         :root {
             --olive: #98ae84;
             --bg-pattern: url('https://raw.githubusercontent.com/lillithhhh/wedding-invite/main/pattern_2.png');
-            --cream-glass: rgba(253, 250, 247, 0.94); /* Чуть плотнее для эффекта "шторы" */
+            --cream-glass: rgba(253, 250, 247, 0.94);
             --dark-text: #4a4a4a;
         }
 
@@ -27,17 +27,32 @@
             text-align: center;
         }
 
-        /* Единый стиль для всех секций */
         section { 
             padding: 60px 20px; 
             background-color: var(--cream-glass); 
-            backdrop-filter: blur(3px); /* Чуть сильнее размытие для мягкости */
+            backdrop-filter: blur(3px); 
             border-bottom: 1px solid rgba(152, 174, 132, 0.15);
         }
 
-        /* Убираем отступ у самой первой секции, чтобы она начиналась от самого верха экрана */
-        section:first-of-type { 
-            padding-top: 50px; 
+        section:first-of-type { padding-top: 50px; }
+
+        /* Стиль для подзаголовка "ПРИГЛАШЕНИЕ" */
+        .intro-label {
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 0.9em;
+            color: var(--olive);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Элегантная линия-разделитель */
+        .divider {
+            width: 40px;
+            height: 1px;
+            background-color: var(--olive);
+            margin: 0 auto 25px;
+            opacity: 0.6;
         }
 
         h1 { 
@@ -125,15 +140,16 @@
 <body>
 
     <section>
-        <p style="text-transform: uppercase; letter-spacing: 5px; font-size: 0.8em; color: var(--olive); margin-bottom: 15px;">ПРИГЛАШЕНИЕ НА СВАДЬБУ</p>
-        <h1>АЖИНИЯЗА<br>И ИНТИЗОР</h1>
+        <span class="intro-label">ПРИГЛАШЕНИЕ</span>
+        <div class="divider"></div>
+        <h1>АЖИНИЯЗ<br>& ИНТИЗОР</h1>
         <div class="date-block">11.05.2026</div>
     </section>
 
     <section>
         <h2>ДОРОГИЕ БЛИЗКИЕ!</h2>
         <p style="max-width: 300px; margin: 0 auto; line-height: 1.7;">
-            Мы официально станем семьей — и будем счастливы разделить этот важный момент с вами! Приглашаем вас присоединиться к нашему особенному дню и украсить его своим присутствием!
+            Мы официально станем семьей — и будем счастливы разделить этот важный момент с Вами! Приглашаем Вас присоединиться к нашему особенному дню и украсить его своим присутствием!
         </p>
     </section>
 
@@ -151,7 +167,7 @@
 
     <section>
         <h3>ДРЕСС-КОД</h3>
-        <p>Будем признательны, если при выборе нарядов вы поддержите палитру нашей свадьбы:</p>
+        <p>Будем признательны, если при выборе нарядов Вы поддержите палитру нашей свадьбы:</p>
         <div class="colors">
             <div class="color-circle" style="background-color: #b5d2b3;"></div> 
             <div class="color-circle" style="background-color: #f4c7c4;"></div> 
@@ -165,7 +181,7 @@
 
     <section style="padding-bottom: 80px;">
         <h3>ПОТВЕРЖДЕНИЕ</h3>
-        <p>Просим подтвердить ваше присутствие:</p>
+        <p>Просим подтвердить Ваше присутствие:</p>
         <div class="rsvp-card">
             <input type="text" id="guest_name" placeholder="Ваше имя и фамилия">
             <button class="btn" onclick="sendData('Приду')">Да, обязательно буду</button>
